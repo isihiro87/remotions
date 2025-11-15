@@ -1,0 +1,42 @@
+{
+  "name": "remotion-1mon1tou",
+  "private": true,
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "dependencies": {
+    "@remotion/bundler": "4.0.374",
+    "@remotion/cli": "4.0.374",
+    "@remotion/google-fonts": "4.0.374",
+    "@remotion/lambda": "4.0.374",
+    "@remotion/renderer": "4.0.374",
+    "@remotion/shapes": "4.0.374",
+    "clsx": "2.1.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.374",
+    "zod": "3.22.3"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.374",
+    "@remotion/eslint-plugin": "4.0.374",
+    "@types/node": "20.12.14",
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "eslint": "9.19.0",
+    "prettier": "3.6.0",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2",
+    "vite": "5.4.21",
+    "vite-tsconfig-paths": "^4.2.1"
+  },
+  "scripts": {
+    "dev": "remotion studio src/RemotionRoot.tsx",
+    "start": "remotion studio src/RemotionRoot.tsx",
+    "render:all": "tsx scripts/render-all.ts",
+    "lint": "eslint . && tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  }
+}
+

@@ -1,0 +1,92 @@
+{
+  "id": "sample-one-mon-one-tou",
+  "title": "中学地理 一問一答（サンプル）",
+  "description": "都道府県と世界地理のキホンを、シンプルな一問一答でテンポ良く復習しよう。",
+  "outputFileBaseName": "sample-one-mon-one-tou",
+  "tags": ["sample", "geography", "junior-high"],
+  "durations": {
+    "introSeconds": 0.4,
+    "outroSeconds": 0.4,
+    "defaultQuestionSeconds": 3.2,
+    "defaultAnswerSeconds": 3.6,
+    "defaultTransitionSeconds": 0.3
+  },
+  "theme": {
+    "backgroundColors": ["#0b1120", "#1d1f47"],
+    "questionPanelColor": "#1d4ed8",
+    "answerPanelColor": "#047857",
+    "textColor": "#f8fafc",
+    "accentColor": "#fbbf24"
+  },
+  "character": {
+    "offsetX": 0,
+    "offsetY": 0
+  },
+  "backgroundMusic": {
+    "src": "audio/sample/bgm-loop.mp3",
+    "volume": 0.25,
+    "loop": true
+  },
+  "items": [
+    {
+      "id": "q01",
+      "question": "日本で最も面積が広い都道府県は？",
+      "answer": "北海道",
+      "questionVoice": "audio/sample/q01-question.wav",
+      "answerVoice": "audio/sample/q01-answer.wav",
+      "questionFontSizePx": 68,
+      "answerFontSizePx": 64,
+      "image": {
+        "src": "",
+        "alt": "北海道の地図",
+        "placement": "top",
+        "size": "medium"
+      }
+    },
+    {
+      "id": "q02",
+      "question": "世界で最も長い川は？",
+      "answer": "ナイル川",
+      "questionVoice": "audio/sample/q02-question.wav",
+      "answerVoice": "audio/sample/q02-answer.wav",
+      "questionFontSizePx": 66,
+      "answerFontSizePx": 62,
+      "image": {
+        "src": "",
+        "alt": "ナイル川の衛星写真",
+        "placement": "left",
+        "size": "small"
+      }
+    },
+    {
+      "id": "q03",
+      "question": "日本で人口が最も多い都道府県は？",
+      "answer": "東京都",
+      "questionVoice": "audio/sample/q03-question.wav",
+      "answerVoice": "audio/sample/q03-answer.wav",
+      "questionFontSizePx": 70,
+      "answerFontSizePx": 60,
+      "image": {
+        "src": "images/sample/tokyo-night.png",
+        "alt": "東京都心の夜景",
+        "placement": "right",
+        "size": "medium"
+      }
+    },
+    {
+      "id": "q04",
+      "question": "地球上の位置を決めるために使う2つの角度は？",
+      "answer": "緯度と経度",
+      "questionVoice": "audio/sample/q04-question.wav",
+      "answerVoice": "audio/sample/q04-answer.wav",
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 64,
+      "image": {
+        "src": "",
+        "alt": "緯度と経度の図解",
+        "placement": "bottom",
+        "size": "large"
+      }
+    }
+  ]
+}
