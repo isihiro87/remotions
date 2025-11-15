@@ -1,0 +1,148 @@
+{
+  "id": "okazaki-trivia-quiz",
+  "title": "岡崎市クイズ",
+  "description": "徳川家康公ゆかりの街・愛知県岡崎市の歴史や文化、グルメを楽しく学ぶ5問の4択クイズです。",
+  "outputFileBaseName": "okazaki-trivia-quiz",
+  "tags": ["okazaki", "history", "culture"],
+  "durations": {
+    "introSeconds": 0.4,
+    "outroSeconds": 0.4,
+    "defaultQuestionSeconds": 3.2,
+    "defaultAnswerSeconds": 3.6,
+    "defaultTransitionSeconds": 0.3,
+    "defaultAnswerDelaySeconds": 2
+  },
+  "theme": {
+    "backgroundColors": ["#0b1120", "#1d1f47"],
+    "questionPanelColor": "#1d4ed8",
+    "answerPanelColor": "#047857",
+    "textColor": "#f8fafc",
+    "accentColor": "#fbbf24"
+  },
+  "character": {
+    "offsetX": 0,
+    "offsetY": 0
+  },
+  "backgroundMusic": {
+    "src": "audio/sample/bgm-loop.mp3",
+    "volume": 0.03,
+    "loop": true
+  },
+  "items": [
+    {
+      "id": "q01",
+      "question": "徳川家康公が1542年に誕生した城はどこ？",
+      "answer": "岡崎城",
+      "questionVoice": "audio/00-oka-quiz-sample.wav",
+      "answerVoice": "audio/01-oka-quiz-sample.wav",
+      "questionSeconds": 4.84,
+      "answerSeconds": 1.389,
+      "questionFontSizePx": 66,
+      "answerFontSizePx": 60,
+      "image": {
+        "src": "",
+        "alt": "岡崎城のイメージ",
+        "placement": "top",
+        "size": "medium"
+      },
+      "choices": [
+        { "id": "q01-a", "text": "岡崎城", "isCorrect": true },
+        { "id": "q01-b", "text": "名古屋城" },
+        { "id": "q01-c", "text": "犬山城" },
+        { "id": "q01-d", "text": "清洲城" }
+      ]
+    },
+    {
+      "id": "q02",
+      "question": "岡崎市・八丁町で受け継がれる伝統的な味噌は？",
+      "answer": "八丁味噌",
+      "questionVoice": "audio/02-oka-quiz-sample.wav",
+      "answerVoice": "audio/03-oka-quiz-sample.wav",
+      "questionSeconds": 4.344,
+      "answerSeconds": 1.483,
+      "questionFontSizePx": 66,
+      "answerFontSizePx": 60,
+      "image": {
+        "src": "",
+        "alt": "八丁味噌の木桶",
+        "placement": "top",
+        "size": "small"
+      },
+      "choices": [
+        { "id": "q02-a", "text": "八丁味噌", "isCorrect": true },
+        { "id": "q02-b", "text": "白味噌" },
+        { "id": "q02-c", "text": "仙台味噌" },
+        { "id": "q02-d", "text": "豆板醤" }
+      ]
+    },
+    {
+      "id": "q03",
+      "question": "岡崎城下家康公夏まつりの花火が奉納される川は？",
+      "answer": "乙川",
+      "questionVoice": "audio/04-oka-quiz-sample.wav",
+      "answerVoice": "audio/05-oka-quiz-sample.wav",
+      "questionSeconds": 4.523,
+      "answerSeconds": 1.16,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60,
+      "image": {
+        "src": "",
+        "alt": "花火大会の川辺",
+        "placement": "top",
+        "size": "medium"
+      },
+      "choices": [
+        { "id": "q03-a", "text": "乙川", "isCorrect": true },
+        { "id": "q03-b", "text": "矢作川" },
+        { "id": "q03-c", "text": "長良川" },
+        { "id": "q03-d", "text": "木曽川" }
+      ]
+    },
+    {
+      "id": "q04",
+      "question": "8月3日に制定された、岡崎名物にちなんだ記念日は？",
+      "answer": "八丁味噌の日",
+      "questionVoice": "audio/06-oka-quiz-sample.wav",
+      "answerVoice": "audio/07-oka-quiz-sample.wav",
+      "questionSeconds": 5.139,
+      "answerSeconds": 1.744,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60,
+      "image": {
+        "src": "",
+        "alt": "記念日の文字イメージ",
+        "placement": "top",
+        "size": "small"
+      },
+      "choices": [
+        { "id": "q04-a", "text": "八丁味噌の日", "isCorrect": true },
+        { "id": "q04-b", "text": "岡崎焼の日" },
+        { "id": "q04-c", "text": "三河花火の日" },
+        { "id": "q04-d", "text": "えごまオイルの日" }
+      ]
+    },
+    {
+      "id": "q05",
+      "question": "2013年のゆるキャラグランプリで全国2位になった岡崎のキャラは？",
+      "answer": "オカザえもん",
+      "questionVoice": "audio/08-oka-quiz-sample.wav",
+      "answerVoice": "audio/09-oka-quiz-sample.wav",
+      "questionSeconds": 5.344,
+      "answerSeconds": 1.28,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60,
+      "image": {
+        "src": "",
+        "alt": "岡崎のゆるキャラ",
+        "placement": "top",
+        "size": "small"
+      },
+      "choices": [
+        { "id": "q05-a", "text": "オカザえもん", "isCorrect": true },
+        { "id": "q05-b", "text": "家康くん" },
+        { "id": "q05-c", "text": "はち丸" },
+        { "id": "q05-d", "text": "わん丸君" }
+      ]
+    }
+  ]
+}
