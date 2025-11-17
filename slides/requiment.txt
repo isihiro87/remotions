@@ -1,0 +1,354 @@
+
+---
+
+# 中学生向け授業スライド自動生成システム
+
+## 要件定義書（Remotion／横長・音声同期・画像タイミング・強調表示完全版）
+
+---
+
+# 1. 背景・目的
+
+## 1-1. 背景
+
+* 中学生向け授業動画の量産が必要だが、
+  スライドレイアウト、行番号、音声、画像、アニメーションを毎回手作業で作るのは非効率。
+* 授業スライドには
+
+  * テキストスライド
+  * 画像併用スライド
+  * 画像のみ表示スライド
+  * 画像複数枚スライド
+    などさまざまな種類がある。
+* 生徒が内容を理解しやすいように、重要語句の強調表示（色付け）も行いたい。
+* 読み上げ音声は行ごとに別ファイルに分かれているため、行番号と音声の完全同期が必要。
+
+## 1-2. 目的
+
+* React + Remotion を用いて、**JSONデータから横長スライド授業動画（16:9）を自動生成**できる仕組みを構築する。
+* スライドごとにレイアウトパターンを指定し、柔軟な表現を可能にする。
+* **すべての行（テキスト行・画像単独スライド行含む）に通し番号を付与し、音声と同期**する。
+* 行間・スライド間のポーズや画像の表示タイミングを詳細に制御できるようにする。
+* 重要語句は JSON で指定し、**文字色や太字などで強調表示**する。
+
+---
+
+# 2. 対象・スコープ
+
+## 2-1. 対象者
+
+* 学習塾講師・教材制作者
+* 外部講師・スタッフも拡張可能
+
+## 2-2. スコープ
+
+* JSON → Remotion → mp4 の自動スライド生成
+* 必須機能：
+
+  * 横長スライド（1920×1080）
+  * 行番号管理
+  * 音声同期
+  * 行間・スライド間のポーズ調整
+  * 複数画像
+  * 画像の多様なタイミング指定
+  * レイアウトパターン選択
+  * 重要語句の強調表示
+* スコープ外：音声の生成（外部で行う）
+
+---
+
+# 3. システム構成
+
+## 3-1. 技術スタック
+
+* React
+* Remotion
+* TypeScript
+* JSON 定義
+
+## 3-2. ディレクトリ例
+
+```
+data/lessons/
+public/images/
+public/audio/
+src/layouts/
+src/components/
+src/utils/timing/
+```
+
+---
+
+# 4. 機能要件
+
+# 4-1. JSON入力仕様（完全版）
+
+---
+
+## ● JSONの全体構造
+
+```json
+{
+  "lessonId": "middle2_science_magnetism_01",
+  "title": "電気と磁石は最強コンビ！「電磁石」のひみつ",
+
+  "timingDefaults": {
+    "pauseBetweenLinesSeconds": 0.5,
+    "pauseBetweenSlidesSeconds": 1.0
+  },
+
+  "slides": []
+}
+```
+
+---
+
+# 4-2. スライド定義（共通）
+
+すべてのスライドに以下を含める：
+
+| 項目               | 説明                           |
+| ---------------- | ---------------------------- |
+| `slideId`        | スライドID                       |
+| `layoutType`     | レイアウトパターンの種類                 |
+| `lines`          | テキスト行＋画像のみスライドでも必須（行番号を振るため） |
+| `images`         | 画像スライドの場合は複数指定可能             |
+| `timingOverride` | 行間・スライド間のポーズを上書きするオプション      |
+
+---
+
+## ● テキスト行の仕様（lines）
+
+```json
+{
+  "lineNumber": 1,
+  "text": "冷蔵庫にペタッとくっつく[[磁石]]。",
+  "highlightWords": ["磁石"],
+  "audioFile": "audio/.../line001.wav",
+  "audioDurationSeconds": 1.8,
+  "pauseAfterSeconds": 0.4
+}
+```
+
+### 重要語句（highlightWords）
+
+* JSONで指定する
+* 表示時に**色付け**＋**太字**（Remotion側でスタイル付与）
+* 文中で `[[磁石]]` と書いても OK（後でスタイル変換）
+
+---
+
+# 4-3. 行番号（全スライド共通ルール）
+
+* レッスン全体で **1〜N の通し番号**を振る。
+* テキストがないスライド（例：画像のみ）も **最低1行のlineNumber必須**。
+* 音声は行番号に紐づける：
+
+```
+line001.wav  
+line002.wav  
+line003.wav  
+...
+```
+
+---
+
+# 4-4. レイアウトパターン（layoutType）
+
+以下を標準実装：
+
+1. `TITLE_ONLY`
+2. `TEXT_ONLY`
+3. `IMAGE_RIGHT_TEXT_LEFT`
+4. `IMAGE_LEFT_TEXT_RIGHT`
+5. `IMAGE_FULL`（画像のみでも lineNumber 必須）
+6. `SUMMARY`
+
+---
+
+# 4-5. 音声同期
+
+### 表示開始＝音声再生開始
+
+Remotionでは `Sequence` を用いて、
+**行ごとの開始フレーム**＝**音声開始フレーム**とする。
+
+---
+
+# 4-6. 行間・スライド間のポーズ
+
+3段階で設定できる：
+
+### （1）レッスン全体のデフォルト値
+
+```
+"pauseBetweenLinesSeconds": 0.5
+"pauseBetweenSlidesSeconds": 1.0
+```
+
+### （2）スライド単位の上書き
+
+```
+"timingOverride": {
+  "pauseBetweenLinesSeconds": 0.3,
+  "pauseAfterLastLineSeconds": 1.2
+}
+```
+
+### （3）行単位
+
+```
+"pauseAfterSeconds": 0.8
+```
+
+---
+
+# 4-7. 画像の複数枚対応（images 配列）
+
+すべてのスライドで複数画像に対応。
+
+```json
+"images": [
+  {
+    "imageId": "IMG1",
+    "imagePath": "images/magnet.png",
+    "slot": "RIGHT",
+    "size": "medium",
+    "timing": { ... },
+    "hideAt": { ... }
+  },
+  {
+    "imageId": "IMG2",
+    "imagePath": "images/compass.png",
+    "slot": "RIGHT",
+    "size": "medium",
+    "timing": { ... }
+  }
+]
+```
+
+---
+
+# 4-8. 画像の表示タイミング指定（3モード）
+
+## (A) with-line
+
+指定の行と同時に表示
+
+```json
+"timing": {
+  "mode": "with-line",
+  "lineNumber": 5,
+  "offsetSeconds": 0.0
+}
+```
+
+## (B) absolute
+
+スライド開始からの秒数で指定
+
+```json
+"timing": {
+  "mode": "absolute",
+  "timeFromSlideStartSeconds": 1.5
+}
+```
+
+## (C) after-line
+
+指定行を「読み終わった後」に表示
+
+```json
+"timing": {
+  "mode": "after-line",
+  "lineNumber": 6,
+  "offsetSeconds": 0.5
+}
+```
+
+---
+
+# 4-9. 画像の消えるタイミング（任意）
+
+```json
+"hideAt": {
+  "mode": "after-line",
+  "lineNumber": 7,
+  "offsetSeconds": 0
+}
+```
+
+指定がなければ「スライド終了まで表示」。
+
+---
+
+# 4-10. アニメーション仕様
+
+## テキスト
+
+* フェードイン
+* 下方向からのスライドイン
+* 行ごとに0.2秒ずつずらす
+* 強調語句は軽くポップアップ（1回）
+
+## 画像
+
+* scale(0.9) → scale(1.0)
+* フェードイン
+* `hideAt` がある場合はフェードアウト
+
+---
+
+# 5. 非機能要件
+
+* 標準PCで3分以内の動画を数分でレンダリング
+* JSON構造だけを見ても授業内容が把握できるようにする
+* レイアウトパターン追加が容易な構造
+
+---
+
+# 6. 運用フロー
+
+1. 台本を作成（ChatGPTなど）
+2. 1行7〜10文字に整形
+3. **すべての行に通し番号を付与**
+4. 音声を `lineXXX.wav` で録音・生成
+5. JSONに入力
+6. `npm run render lessonId=xxx` で自動生成
+7. 確認 → 修正 → 再レンダリング
+8. 教室またはYouTubeで利用
+
+---
+
+# 7. 付録：画像のみスライド（IMAGE_FULL）の例
+
+```json
+{
+  "slideId": "S05",
+  "layoutType": "IMAGE_FULL",
+  "lines": [
+    {
+      "lineNumber": 15,
+      "text": "",
+      "audioFile": "audio/.../line015.wav",
+      "audioDurationSeconds": 3.2
+    }
+  ],
+  "images": [
+    {
+      "imageId": "IMG1",
+      "imagePath": "images/magnet_field.jpg",
+      "slot": "FULL",
+      "size": "large",
+      "timing": {
+        "mode": "absolute",
+        "timeFromSlideStartSeconds": 0
+      }
+    }
+  ]
+}
+```
+
+※「画像のみ」の場合も **lines 配列に行番号＋音声を必ず記載**する。
+
+---

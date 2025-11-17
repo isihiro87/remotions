@@ -32,16 +32,16 @@ const containerStyle: CSSProperties = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  paddingTop: 48,
-  paddingBottom: 48,
-  gap: 32,
+  paddingTop: 0,
+  paddingBottom: 36,
+  gap: 12,
 };
 
 const headerGroupStyle: CSSProperties = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  gap: 10,
+  gap: 6,
 };
 
 const titleStyle: CSSProperties = {
@@ -49,10 +49,11 @@ const titleStyle: CSSProperties = {
   fontWeight: 800,
   textAlign: "center",
   lineHeight: 1.2,
+  whiteSpace: "pre-line",
 };
 
 const progressStyle: CSSProperties = {
-  fontSize: 32,
+  fontSize: 42,
   fontWeight: 600,
   textAlign: "center",
   letterSpacing: "0.18em",
@@ -74,6 +75,8 @@ const qaStackWrapperStyle: CSSProperties = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  marginTop: -140,
+  paddingTop: 0,
 };
 
 const QA_STACK_MAX_WIDTH = 880;
@@ -281,6 +284,8 @@ export const QAContentCard: React.FC<Props> = ({
       </div>
     ) : null;
 
+  const decoratedTitle = ["一問一答", title].filter(Boolean).join("\n");
+
   return (
     <AbsoluteFill
       style={{
@@ -297,7 +302,7 @@ export const QAContentCard: React.FC<Props> = ({
               color: titleColor,
             }}
           >
-            {title}
+            {decoratedTitle}
           </div>
           {showProgress ? (
             <div

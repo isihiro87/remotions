@@ -1,0 +1,145 @@
+{
+  "lessonId": "sample_magnetism_01",
+  "title": "電磁石のひみつを学ぼう",
+  "timingDefaults": {
+    "pauseBetweenLinesSeconds": 0.6,
+    "pauseBetweenSlidesSeconds": 1.2
+  },
+  "slides": [
+    {
+      "slideId": "S01",
+      "layoutType": "TITLE_ONLY",
+      "title": "今日のテーマ",
+      "subtitle": "電気と磁石の関係を探ろう",
+      "lines": [
+        {
+          "lineNumber": 1,
+          "text": "今日は電気が流れると[[磁石]]になる「電磁石」について学びます。",
+          "highlightWords": ["電磁石", "磁石"],
+          "audioFile": "audio/sample/line001.mp3",
+          "audioDurationSeconds": 3.0,
+          "pauseAfterSeconds": 0.8
+        }
+      ],
+      "images": [
+        {
+          "imageId": "title-image",
+          "imagePath": "images/sample/cover.png",
+          "slot": "RIGHT",
+          "size": "medium",
+          "timing": {
+            "mode": "absolute",
+            "timeFromSlideStartSeconds": 0
+          }
+        }
+      ]
+    },
+    {
+      "slideId": "S02",
+      "layoutType": "IMAGE_RIGHT_TEXT_LEFT",
+      "title": "磁石の基本",
+      "lines": [
+        {
+          "lineNumber": 2,
+          "text": "磁石には必ずN極とS極があり、お互いを引きつけたり反発したりします。",
+          "highlightWords": ["N極", "S極"],
+          "audioFile": "audio/sample/line002.mp3",
+          "audioDurationSeconds": 4.0
+        },
+        {
+          "lineNumber": 3,
+          "text": "この性質を利用して、方位磁針や磁石クレーンなどが作られています。",
+          "highlightWords": ["方位磁針", "磁石クレーン"],
+          "audioFile": "audio/sample/line003.mp3",
+          "audioDurationSeconds": 3.8
+        }
+      ],
+      "images": [
+        {
+          "imageId": "magnet",
+          "imagePath": "images/sample/magnet.png",
+          "slot": "RIGHT",
+          "size": "medium",
+          "timing": {
+            "mode": "with-line",
+            "lineNumber": 2
+          }
+        }
+      ]
+    },
+    {
+      "slideId": "S03",
+      "layoutType": "IMAGE_FULL",
+      "title": "電磁石の仕組み",
+      "lines": [
+        {
+          "lineNumber": 4,
+          "text": "",
+          "audioFile": "audio/sample/line004.mp3",
+          "audioDurationSeconds": 5.0,
+          "pauseAfterSeconds": 1.4
+        }
+      ],
+      "images": [
+        {
+          "imageId": "electromagnet",
+          "imagePath": "images/sample/electromagnet.png",
+          "slot": "FULL",
+          "size": "fill",
+          "timing": {
+            "mode": "absolute",
+            "timeFromSlideStartSeconds": 0
+          }
+        }
+      ]
+    },
+    {
+      "slideId": "S04",
+      "layoutType": "SUMMARY",
+      "title": "今日のまとめ",
+      "lines": [
+        {
+          "lineNumber": 5,
+          "text": "電磁石は電気を流すと磁力が生まれ、止めると磁力がなくなる便利な磁石です。",
+          "highlightWords": ["電磁石", "磁力"],
+          "audioFile": "audio/sample/line005.mp3",
+          "audioDurationSeconds": 4.2
+        },
+        {
+          "lineNumber": 6,
+          "text": "N極とS極の向きは電流の向きで決まり、極を逆にすることもできます。",
+          "highlightWords": ["電流", "N極", "S極"],
+          "audioFile": "audio/sample/line006.mp3",
+          "audioDurationSeconds": 3.6
+        },
+        {
+          "lineNumber": 7,
+          "text": "磁力の強さはコイルの巻き数や電流の大きさで調整できます。",
+          "highlightWords": ["磁力", "コイル", "電流"],
+          "audioFile": "audio/sample/line007.mp3",
+          "audioDurationSeconds": 3.8,
+          "pauseAfterSeconds": 1.6
+        }
+      ],
+      "images": [
+        {
+          "imageId": "summary",
+          "imagePath": "images/sample/summary.png",
+          "slot": "RIGHT",
+          "size": "small",
+          "timing": {
+            "mode": "after-line",
+            "lineNumber": 5,
+            "offsetSeconds": 0.2
+          },
+          "hideAt": {
+            "mode": "after-line",
+            "lineNumber": 7,
+            "offsetSeconds": 0.2
+          }
+        }
+      ]
+    }
+  ]
+}
+

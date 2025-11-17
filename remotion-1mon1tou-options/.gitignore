@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+out/
+.remotion/
+
+# Logs and temp files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Editor/OS files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Misc
+*.env
+*.env.local
+.cache/
+node_modules

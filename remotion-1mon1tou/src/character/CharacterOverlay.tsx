@@ -322,7 +322,6 @@ export const CharacterOverlay: React.FC<Props> = ({
             height: "auto",
             display: "block",
             filter: "drop-shadow(0px 12px 24px rgba(0,0,0,0.2))",
-            transform: "scaleX(-1)",
           }}
         />
       </div>

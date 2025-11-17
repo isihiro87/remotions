@@ -71,6 +71,8 @@ export type QAScriptItem = {
   transitionSeconds?: number;
   questionVoice?: string;
   answerVoice?: string;
+  questionVoiceDurationSeconds?: number;
+  answerVoiceDurationSeconds?: number;
   questionFontSizePx?: number;
   answerFontSizePx?: number;
   image?: QAItemImage;

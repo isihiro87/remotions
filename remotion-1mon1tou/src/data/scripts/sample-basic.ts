@@ -1,5 +1,5 @@
 import type { QAScript } from "../../types";
-import sampleScript from "../sample.json" assert { type: "json" };
+import geoKantoScript from "../2-geo/kanto/qa.json" assert { type: "json" };
 
-export const sampleBasicScript = sampleScript as QAScript;
+export const sampleBasicScript = geoKantoScript as QAScript;
 

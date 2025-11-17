@@ -1,0 +1,131 @@
+{
+  "id": "geo-kanto-one-mon-one-tou",
+  "title": "中学地理 関東地方",
+  "description": "関東地方の地形・気候・都市機能に関する基本事項をテンポ良く復習できる一問一答セット。",
+  "outputFileBaseName": "geo-kanto-one-mon-one-tou",
+  "tags": ["geography", "kanto", "junior-high"],
+  "durations": {
+    "introSeconds": 0.6,
+    "outroSeconds": 0.6,
+    "defaultQuestionSeconds": 5.9,
+    "defaultAnswerSeconds": 1.5,
+    "defaultTransitionSeconds": 0.2
+  },
+  "theme": {
+    "backgroundColors": ["#020617", "#0f172a"],
+    "questionPanelColor": "#1d4ed8",
+    "answerPanelColor": "#0f766e",
+    "textColor": "#f8fafc",
+    "accentColor": "#fbbf24"
+  },
+  "character": {
+    "offsetX": 0,
+    "offsetY": 0
+  },
+  "items": [
+    {
+      "id": "q01",
+      "question": "都市部の気温がビルなどの影響で、周辺の郊外より高くなる現象は何か？",
+      "answer": "ヒートアイランド現象",
+      "questionVoice": "voices/00-geo-kanto1.wav",
+      "answerVoice": "voices/01-geo-kanto1.wav",
+      "questionVoiceDurationSeconds": 5.515,
+      "answerVoiceDurationSeconds": 1.939,
+      "questionSeconds": 5.52,
+      "answerSeconds": 1.94,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60
+    },
+    {
+      "id": "q02",
+      "question": "日本の人口の約3分の1が集中する、日本で最も広い平野は何か？",
+      "answer": "関東平野",
+      "questionVoice": "voices/02-geo-kanto1.wav",
+      "answerVoice": "voices/03-geo-kanto1.wav",
+      "questionVoiceDurationSeconds": 5.915,
+      "answerVoiceDurationSeconds": 1.448,
+      "questionSeconds": 5.92,
+      "answerSeconds": 1.45,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60
+    },
+    {
+      "id": "q03",
+      "question": "火山灰が積もってできた、関東平野をおおう赤土の層を何というか？",
+      "answer": "関東ローム",
+      "questionVoice": "voices/04-geo-kanto1.wav",
+      "answerVoice": "voices/05-geo-kanto1.wav",
+      "questionVoiceDurationSeconds": 5.139,
+      "answerVoiceDurationSeconds": 1.44,
+      "questionSeconds": 5.14,
+      "answerSeconds": 1.44,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60
+    },
+    {
+      "id": "q04",
+      "question": "関東平野を流れ、流域面積が日本で最も大きい川は何か？",
+      "answer": "利根川",
+      "questionVoice": "voices/06-geo-kanto1.wav",
+      "answerVoice": "voices/07-geo-kanto1.wav",
+      "questionVoiceDurationSeconds": 4.968,
+      "answerVoiceDurationSeconds": 1.139,
+      "questionSeconds": 4.97,
+      "answerSeconds": 1.14,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60
+    },
+    {
+      "id": "q05",
+      "question": "冬に関東内陸部で吹く、冷たく乾燥した北西の季節風を何というか？",
+      "answer": "からっ風",
+      "questionVoice": "voices/08-geo-kanto1.wav",
+      "answerVoice": "voices/09-geo-kanto1.wav",
+      "questionVoiceDurationSeconds": 6.48,
+      "answerVoiceDurationSeconds": 1.264,
+      "questionSeconds": 6.48,
+      "answerSeconds": 1.27,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60
+    },
+    {
+      "id": "q06",
+      "question": "関東南部に位置し、埋め立てで工業地帯や都市機能が集中する湾は何か？",
+      "answer": "東京湾",
+      "questionVoice": "voices/10-geo-kanto1.wav",
+      "answerVoice": "voices/11-geo-kanto1.wav",
+      "questionVoiceDurationSeconds": 6.24,
+      "answerVoiceDurationSeconds": 1.115,
+      "questionSeconds": 6.24,
+      "answerSeconds": 1.12,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60
+    },
+    {
+      "id": "q07",
+      "question": "国の政治・経済・文化の中心となる都市を何というか？",
+      "answer": "首都",
+      "questionVoice": "voices/12-geo-kanto1.wav",
+      "answerVoice": "voices/13-geo-kanto1.wav",
+      "questionVoiceDurationSeconds": 5.653,
+      "answerVoiceDurationSeconds": 0.843,
+      "questionSeconds": 5.65,
+      "answerSeconds": 0.85,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60
+    },
+    {
+      "id": "q08",
+      "question": "古いビルを壊し高層ビルなどを建て、都市の機能を更新することを何というか？",
+      "answer": "再開発",
+      "questionVoice": "voices/14-geo-kanto1.wav",
+      "answerVoice": "voices/15-geo-kanto1.wav",
+      "questionVoiceDurationSeconds": 6.093,
+      "answerVoiceDurationSeconds": 1.333,
+      "questionSeconds": 6.09,
+      "answerSeconds": 1.34,
+      "questionFontSizePx": 64,
+      "answerFontSizePx": 60
+    }
+  ]
+}
